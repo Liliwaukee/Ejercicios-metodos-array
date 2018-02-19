@@ -247,9 +247,15 @@ console.log(outputDogs);
 // 10. Render in DOM
 /*Usando la data anterior y alguno de los métodos, pinta en el index.html a través del DOM
  cada una de las mascotas junto con todas su propiedades*/
+var containerDataPets = document.getElementById("pet-data");
 
  var paintPets = function(array) {
 
+   var pet = array.map(function(data){
+     var petData = document.createElement("p");
+     petData.textContent = data.name + " " + data.age + " " + data.type;
+     containerDataPets.appendChild(petData);
+   })
  };
 
 var outputPaintPets = paintPets(data);
